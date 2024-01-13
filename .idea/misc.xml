@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/drawable/shape_remote_buttons.xml" value="0.1735" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/activity_info.xml" value="0.1" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/add_button_dialog_layout.xml" value="0.33" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/add_dialog_layout.xml" value="0.23388704318936876" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/add_element_dialog_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/add_poti_dialog_layout.xml" value="2.5142857142857142" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/add_switch_dialog_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/change_firstline_dialog_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/construct_remote_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/construct_remote_title_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/constructor_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/constructor_title_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/delete_dialog_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/info_title_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/remote_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/remote_title_layout.xml" value="0.1" />
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/title_layout.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

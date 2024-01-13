@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstructRemoteActivity"
+    tools:ignore="InvalidId">
+
+    <TextView
+        android:id="@+id/selectedElementTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#000" />
+
+    <LinearLayout
+        android:id="@+id/optionButtonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/deleteimage"
+            android:onClick="deleteClick"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/rotateimage"
+            android:onClick="rotateClick"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/sizeminusimage"
+            android:onClick="minusSizeClick"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/sizeplusimage"
+            android:onClick="plusSizeClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/optionPotiPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/deleteimage"
+            android:onClick="deletePotiClick" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/setdefaultsizeimage"
+            android:onClick="setDefaultPotiSizeClick" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/plusheightimage"
+            android:onClick="plusHeightClick" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/pluswidthimage"
+            android:onClick="plusWidthClick" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/optionTextFieldPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/deleteimage"
+            android:onClick="deleteTextFieldClick" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/rotateimage"
+            android:onClick="rotateTextFieldClick"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/plusheightimage"
+            android:onClick="plusHeightTextFieldClick" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            app:srcCompat="@drawable/pluswidthimage"
+            android:onClick="plusWidthTextFieldClick" />
+    </LinearLayout>
+
+
+</RelativeLayout>

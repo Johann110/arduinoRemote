@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="310dp"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/connectionTypeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select connection type:"
+        android:textColor="#000"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/wifiBtn"
+            android:text="WiFi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="0dp">
+        </Space>
+
+        <Button
+            android:id="@+id/bluetoothBtn"
+            android:text="Bluetooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="10dp">
+    </Space>
+
+    <!-- Remote name -->
+    <TextView
+        android:id="@+id/remoteNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter remote name:"
+        android:textColor="#000" />
+
+    <EditText
+        android:id="@+id/remoteNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:hint="Remote..." />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="10dp">
+    </Space>
+
+    <!-- IP -->
+    <TextView
+        android:id="@+id/deviceIPTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter IP:"
+        android:textColor="#000"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/deviceIPEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="IP..."
+        android:singleLine="true"
+        android:visibility="gone"/>
+
+    <!-- device name -->
+    <TextView
+        android:id="@+id/deviceNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter device name:"
+        android:textColor="#000"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/deviceNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Device..."
+        android:singleLine="true"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/okBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"/>
+
+</LinearLayout>

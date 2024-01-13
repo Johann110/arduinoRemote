@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".InfoActivity"
+    android:orientation="vertical"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/remotePanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select a manual according to your connection type:"
+                android:textColor="#000" />
+
+            <Button
+                android:text="Bluetooth (ESP-WROOM-32)"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:onClick="btManualClick"/>
+
+            <Button
+                android:text="WiFi (Wemos)"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:onClick="wifiManualClick"/>
+
+            <!-- Bluetooth manual -->
+            <TextView
+                android:id="@+id/btText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/btText1" />
+
+            <TextView
+                android:id="@+id/btText2"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/btText2" />
+
+
+            <Button
+                android:id="@+id/copyBTText2Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyBTText2Click"/>
+
+
+            <TextView
+                android:id="@+id/btText3"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/btText3" />
+
+            <TextView
+                android:id="@+id/btText4"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/btText4" />
+
+            <Button
+                android:id="@+id/copyBTText4Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyBTText4Click"/>
+
+            <TextView
+                android:id="@+id/btText5"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/btText5" />
+
+            <TextView
+                android:id="@+id/btText6"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/btText6" />
+
+            <Button
+                android:id="@+id/copyBTText6Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyBTText6Click"/>
+
+            <TextView
+                android:id="@+id/btText7"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/btText7" />
+
+            <TextView
+                android:id="@+id/btText8"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/btText8" />
+
+            <Button
+                android:id="@+id/copyBTText8Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyBTText8Click"/>
+
+            <TextView
+                android:id="@+id/btText9"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/btText9" />
+
+            <TextView
+                android:id="@+id/btText10"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/btText10" />
+
+            <Button
+                android:id="@+id/copyBTText10Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyBTText10Click"/>
+
+            <!-- Wifi manual -->
+            <TextView
+                android:id="@+id/wifiText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/wifiText1" />
+
+
+            <TextView
+                android:id="@+id/wifiText2"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/wifiText2" />
+
+            <Button
+                android:id="@+id/copyWiFiText2Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyWiFiText2Click"/>
+
+            <TextView
+                android:id="@+id/wifiText3"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/wifiText3" />
+
+            <TextView
+                android:id="@+id/wifiText4"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/wifiText4" />
+
+            <Button
+                android:id="@+id/copyWiFiText4Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyWiFiText4Click"/>
+
+            <TextView
+                android:id="@+id/wifiText5"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/wifiText5" />
+
+            <TextView
+                android:id="@+id/wifiText6"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/wifiText6" />
+
+            <Button
+                android:id="@+id/copyWiFiText6Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyWiFiText6Click"/>
+
+            <TextView
+                android:id="@+id/wifiText7"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/wifiText7" />
+
+            <TextView
+                android:id="@+id/wifiText8"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/wifiText8" />
+
+            <Button
+                android:id="@+id/copyWiFiText8Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyWiFiText8Click"/>
+
+            <TextView
+                android:id="@+id/wifiText9"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/wifiText9" />
+
+            <TextView
+                android:id="@+id/wifiText10"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:background="#f7e6d5"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                android:text="@string/wifiText10" />
+
+            <Button
+                android:id="@+id/copyWiFiText10Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Copy"
+                android:visibility="gone"
+                android:onClick="copyWiFiText10Click"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

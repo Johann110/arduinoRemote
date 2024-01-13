@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/contentLayout"
+        android:orientation="vertical"
+        android:gravity="top|center"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="40dp">
+
+        <!-- Button to call the remote constructor activity to create and change remotes -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/remoteConstructorBtn"
+            android:text="Remote constructor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.15"
+            android:textAllCaps="false"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:background="@drawable/shape_menu_buttons"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="0.0" >
+        </Space>
+
+        <!-- scrollview with the remotes -->
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.95"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/remotePanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="5dp" />
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

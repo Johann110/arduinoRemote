@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Pick something:"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/newButtonBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/newSwitchBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Switch" />
+
+    <Button
+        android:id="@+id/newPotentiometerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Potentiometer" />
+
+    <Button
+        android:id="@+id/newTextFieldBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Text field" />
+
+
+
+</LinearLayout>
