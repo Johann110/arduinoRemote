@@ -323,51 +323,15 @@ public class RemoteActivity extends AppCompatActivity {
                         @SuppressLint("UseCompatLoadingForDrawables")
                         @Override
                         public void onClick(View view) {
-
+                            int currentResource = getDrawableResourceForSize(size, false);
+                            int pressedResource = getDrawableResourceForSize(size, true);
                             // unpressed to pressed
-                            if (textViewsForButtons.get(finalI).getBackground().getConstantState() == getResources().getDrawable(R.drawable.switchunpressed100x50).getConstantState()) {
-                                textViewsForButtons.get(finalI).setBackgroundResource(R.drawable.switchpressed100x50);
-                                if (wifiConnection) {
-                                    sendOverWifi(userButtons.get(finalI).getCode(), "1");
-                                } else {
-                                    sendOverBT(userButtons.get(finalI).getCode(), "1");
-                                }
-                            } else if (textViewsForButtons.get(finalI).getBackground().getConstantState() == getResources().getDrawable(R.drawable.switchunpressed160x80).getConstantState()) {
-                                textViewsForButtons.get(finalI).setBackgroundResource(R.drawable.switchpressed160x80);
-                                if (wifiConnection) {
-                                    sendOverWifi(userButtons.get(finalI).getCode(), "1");
-                                } else {
-                                    sendOverBT(userButtons.get(finalI).getCode(), "1");
-                                }
-                            } else if (textViewsForButtons.get(finalI).getBackground().getConstantState() == getResources().getDrawable(R.drawable.switchunpressed240x120).getConstantState()) {
-                                textViewsForButtons.get(finalI).setBackgroundResource(R.drawable.switchpressed240x120);
-                                if (wifiConnection) {
-                                    sendOverWifi(userButtons.get(finalI).getCode(), "1");
-                                } else {
-                                    sendOverBT(userButtons.get(finalI).getCode(), "1");
-                                }
-                                // pressed to unpressed
-                            } else if (textViewsForButtons.get(finalI).getBackground().getConstantState() == getResources().getDrawable(R.drawable.switchpressed100x50).getConstantState()) {
-                                textViewsForButtons.get(finalI).setBackgroundResource(R.drawable.switchunpressed100x50);
-                                if (wifiConnection) {
-                                    sendOverWifi(userButtons.get(finalI).getCode(), "0");
-                                } else {
-                                    sendOverBT(userButtons.get(finalI).getCode(), "0");
-                                }
-                            } else if (textViewsForButtons.get(finalI).getBackground().getConstantState() == getResources().getDrawable(R.drawable.switchpressed160x80).getConstantState()) {
-                                textViewsForButtons.get(finalI).setBackgroundResource(R.drawable.switchunpressed160x80);
-                                if (wifiConnection) {
-                                    sendOverWifi(userButtons.get(finalI).getCode(), "0");
-                                } else {
-                                    sendOverBT(userButtons.get(finalI).getCode(), "0");
-                                }
-                            } else if (textViewsForButtons.get(finalI).getBackground().getConstantState() == getResources().getDrawable(R.drawable.switchpressed240x120).getConstantState()) {
-                                textViewsForButtons.get(finalI).setBackgroundResource(R.drawable.switchunpressed240x120);
-                                if (wifiConnection) {
-                                    sendOverWifi(userButtons.get(finalI).getCode(), "0");
-                                } else {
-                                    sendOverBT(userButtons.get(finalI).getCode(), "0");
-                                }
+                            if (textViewsForButtons.get(finalI).getBackground().getConstantState() == getResources().getDrawable(currentResource).getConstantState()) {
+                                textViewsForButtons.get(finalI).setBackgroundResource(pressedResource);
+                                sendButtonStateOverConnection(userButtons.get(finalI).getCode(), "1");
+                            } else { // pressed to unpressed
+                                textViewsForButtons.get(finalI).setBackgroundResource(currentResource);
+                                sendButtonStateOverConnection(userButtons.get(finalI).getCode(), "0");
                             }
                         }
                     });
@@ -487,8 +451,44 @@ public class RemoteActivity extends AppCompatActivity {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    private void sendButtonStateOverConnection(String code, String state) {
+        if (wifiConnection) {
+            sendOverWifi(code, state);
+        } else {
+            sendOverBT(code, state);
+        }
+    }
 
+    private int getDrawableResourceForSize(String size, boolean isPressed) {
+        int resourceId;
+        if (isPressed) {
+            switch (size) {
+                case "0":
+                    resourceId = R.drawable.switchpressed100x50;
+                    break;
+                case "1":
+                    resourceId = R.drawable.switchpressed160x80;
+                    break;
+                default:
+                    resourceId = R.drawable.switchpressed240x120;
+                    break;
+            }
+        } else {
+            switch (size) {
+                case "0":
+                    resourceId = R.drawable.switchunpressed100x50;
+                    break;
+                case "1":
+                    resourceId = R.drawable.switchunpressed160x80;
+                    break;
+                default:
+                    resourceId = R.drawable.switchunpressed240x120;
+                    break;
+            }
+        }
+        return resourceId;
     }
 
     private void sendOverWifi(String code, String value) {
