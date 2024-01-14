@@ -55,12 +55,16 @@ public class RemoteActivity extends AppCompatActivity {
     int b = 0;
     String wifiReadingData = "";
     String bluetoothReadingData = "";
-
     RelativeLayout layout;
     boolean wifiConnection = true;
 
+    Handler handler;
+
     Thread thread;
     Thread readDataThread;
+
+    private static final long RECONNECT_INTERVAL = 5000; // Zeitintervall für erneuten Verbindungsversuch (in Millisekunden)
+    private boolean isConnecting = false;
     //String data = "";
 
     // remote element arrays
@@ -133,18 +137,6 @@ public class RemoteActivity extends AppCompatActivity {
                     }
                 }
             }
-            /*
-            socket = null;
-            try {
-                socket = BTdevice.createRfcommSocketToServiceRecord(PORT_UUID);
-                socket.connect();
-            } catch (NullPointerException | IOException e) {
-                Toast.makeText(getApplicationContext(),"Cannot connect", Toast.LENGTH_SHORT).show();
-                finish();
-                return;
-            }
-
-             */
         } else {
             WifiManager wifi = (WifiManager) getSystemService(RemoteActivity.WIFI_SERVICE);
             if (!wifi.isWifiEnabled()) {
@@ -173,7 +165,7 @@ public class RemoteActivity extends AppCompatActivity {
                 }
                 split = Arrays.asList(line.split("\\|"));
                 if (split.get(0).equals("textfield")) {
-                    final Handler handler = new Handler();
+                    handler = new Handler();
                     Runnable runnable = new Runnable() {
                         @Override
                         public void run() {
@@ -258,11 +250,7 @@ public class RemoteActivity extends AppCompatActivity {
                         public boolean onTouch(View view, MotionEvent motionEvent) { // send data
                             switch (motionEvent.getAction()) {
                                 case MotionEvent.ACTION_DOWN:
-                                    if (wifiConnection) {
-                                        sendOverWifi(userButtons.get(finalI).getCode(), "1");
-                                    } else {
-                                        sendOverBT(userButtons.get(finalI).getCode(), "1");
-                                    }
+                                    sendButtonStateOverConnection(userButtons.get(finalI).getCode(), "1");
                                     if (size.equals("0")) {
                                         textViewsForButtons.get(finalI).setBackgroundResource(R.drawable.buttonpressed50x50);
                                     } else if (size.equals("1")) {
@@ -273,11 +261,7 @@ public class RemoteActivity extends AppCompatActivity {
                                     break;
 
                                 case MotionEvent.ACTION_UP:
-                                    if (wifiConnection) {
-                                        sendOverWifi(userButtons.get(finalI).getCode(), "0");
-                                    } else {
-                                        sendOverBT(userButtons.get(finalI).getCode(), "0");
-                                    }
+                                    sendButtonStateOverConnection(userButtons.get(finalI).getCode(), "0");
                                     if (size.equals("0")) {
                                         textViewsForButtons.get(finalI).setBackgroundResource(R.drawable.buttonunpressed50x50);
                                     } else if (size.equals("1")) {
@@ -523,7 +507,7 @@ public class RemoteActivity extends AppCompatActivity {
                         public void run() {
                             RemoteActivity.this.runOnUiThread(new Runnable() {
                                 public void run() {
-                                    Toast.makeText(getApplicationContext(), "Wrong IP", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(), "Invalid IP", Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
@@ -555,31 +539,61 @@ public class RemoteActivity extends AppCompatActivity {
         String data = code + value;
         Thread thread = new Thread() {
             public void run() {
-
-                OutputStream outputStream = null;
-                try {
-                    if (socket == null) {
-                        socket = BTdevice.createRfcommSocketToServiceRecord(PORT_UUID);
-                        socket.connect();
-                    } else {
-                        outputStream = socket.getOutputStream();
-                        outputStream.write(data.getBytes());
+                if (!isConnecting) {
+                    while (socket == null || !socket.isConnected()) {
+                        System.out.println("Reconnecting...");
+                        reconnect();
                     }
-                } catch ( IOException e) {
-                    runOnUiThread(new Runnable() {
-                        public void run() {
-                            ActionBar ab = getSupportActionBar();
-                            assert ab != null;
-                            ab.setTitle(remote + ": not connected");
+
+                    // Verbindung wurde wiederhergestellt, Daten senden
+                    try {
+                        System.out.println(socket);
+                        if (socket != null && socket.isConnected()) {
+                            OutputStream outputStream = socket.getOutputStream();
+                            outputStream.write(data.getBytes());
                         }
-                    });
-                } catch (NullPointerException e){
-                    Log.wtf("nullpointer", "null");
+                    } catch (IOException e) {
+                        socket = null;
+                        System.out.println("resetting socket");
+                        // Fehler beim Senden der Daten nach erfolgreicher Verbindung
+                        e.printStackTrace();
+                    }
                 }
             }
         };
         thread.start();
+    }
 
+    @SuppressLint("MissingPermission")
+    private void reconnect() {
+        if (!isConnecting) {
+            socket = null;
+            while (socket == null || !socket.isConnected()) {
+                try {
+                    isConnecting = true;
+
+                    if (socket != null) {
+                        try {
+                            socket.close();
+                        } catch (IOException e) {
+                            System.out.println(e.getMessage());
+                        }
+                    }
+
+                    // restore connection
+                    socket = BTdevice.createRfcommSocketToServiceRecord(PORT_UUID);
+                    socket.connect();
+
+                    isConnecting = false;
+                } catch (IOException e) {
+                    try {
+                        Thread.sleep(RECONNECT_INTERVAL);
+                    } catch (InterruptedException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        }
     }
 
     private void seekBarClicked(String value, boolean lastSend, String potiCode) {
@@ -628,8 +642,10 @@ public class RemoteActivity extends AppCompatActivity {
                 InputStream inputStream = null;
                 try {
                     if (socket == null) {
-                        socket = BTdevice.createRfcommSocketToServiceRecord(PORT_UUID);
-                        socket.connect();
+                        while (socket == null || !socket.isConnected()) {
+                            System.out.println("Reconnecting...");
+                            reconnect();
+                        }
                     } else {
                         inputStream = socket.getInputStream();
                         while (true) {
@@ -655,8 +671,11 @@ public class RemoteActivity extends AppCompatActivity {
                             ab.setTitle(remote + ": not connected");
                         }
                     });
+                    System.out.println("nulling socket 2");
+                    socket = null;
                 } catch (NullPointerException e) {
                     Log.wtf("nullpointer", "null");
+                    socket = null;
                 }
             }
         };
@@ -694,11 +713,6 @@ public class RemoteActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     runOnUiThread(new Runnable() {
                         public void run(){
-                            textField.setText("No connection");
-                        }
-                    });
-                    runOnUiThread(new Runnable() {
-                        public void run(){
                             ActionBar ab = getSupportActionBar();
                             assert ab != null;
                             ab.setTitle(remote + ": not connected");
@@ -715,6 +729,14 @@ public class RemoteActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        if (readDataThread != null && readDataThread.isAlive()) {
+            readDataThread.interrupt();
+        }
+        try {
+            handler.removeCallbacksAndMessages(null);
+        } catch (NullPointerException e){
+            System.out.println(e.getMessage());
+        }
         if (socket != null){
             if(socket.isConnected()){
                 try {
@@ -724,7 +746,22 @@ public class RemoteActivity extends AppCompatActivity {
                 }
             }
         }
-
+        socket = null;
         finish();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (socket != null) {
+            try {
+                socket.close();
+            } catch (IOException e) {
+                // Fehler beim Schließen der Verbindung
+                e.printStackTrace();
+            }
+            socket = null;
+        }
     }
 }
