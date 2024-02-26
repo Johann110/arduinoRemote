@@ -17,6 +17,8 @@
         android:id="@+id/changeFirstlineEditText"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:hint="Text..."
+        android:textColorHint="#64686e"
         android:maxLines="1"/>
 
     <Button

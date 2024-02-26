@@ -6,7 +6,8 @@
     android:paddingStart="20dp"
     android:paddingTop="10dp"
     android:paddingEnd="20dp"
-    android:paddingBottom="20dp">
+    android:paddingBottom="20dp"
+    android:background="#fff">
 
     <TextView
         android:id="@+id/connectionTypeTextView"
@@ -49,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Enter remote name:"
+
         android:textColor="#000" />
 
     <EditText
@@ -56,7 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
-        android:hint="Remote..." />
+        android:hint="Remote..."
+        android:textColorHint="#64686e"/>
 
     <Space
         android:layout_width="0dp"
@@ -77,6 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="IP..."
+        android:textColorHint="#64686e"
         android:singleLine="true"
         android:visibility="gone"/>
 
@@ -94,6 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Device..."
+        android:textColorHint="#64686e"
         android:singleLine="true"
         android:visibility="gone"/>
 
