@@ -53,7 +53,7 @@ public class RemoteActivity extends AppCompatActivity {
     public static final UUID PORT_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
     String remote = "";
     String device = "";
-
+    //boolean contentLoaded = false;
     boolean isFinished = false;
 
     String bluetoothReadingData = "";
@@ -150,7 +150,6 @@ public class RemoteActivity extends AppCompatActivity {
         }
 
         layout = findViewById(R.id.layout);
-        setRemoteContent();
 
         // if there is a TextField, start listen for information
         try {
@@ -191,6 +190,13 @@ public class RemoteActivity extends AppCompatActivity {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setRemoteContent();
+            }
+        }, 1000);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -448,6 +454,7 @@ public class RemoteActivity extends AppCompatActivity {
 
     private int getDrawableResourceForSize(String size, boolean isPressed) {
         int resourceId;
+        System.out.println("it worked");
         if (isPressed) {
             switch (size) {
                 case "0":
@@ -538,6 +545,26 @@ public class RemoteActivity extends AppCompatActivity {
     @SuppressLint("MissingPermission")
     private void sendOverBT(String code, String value) {
         String data = code + value;
+        if (socket != null){
+            if (!socket.isConnected()){
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        ActionBar ab = getSupportActionBar();
+                        assert ab != null;
+                        ab.setTitle(remote + ": not connected");
+                    }
+                });
+            } else {
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        ActionBar ab = getSupportActionBar();
+                        assert ab != null;
+                        ab.setTitle(remote + ": connected");
+                    }
+                });
+            }
+        }
+        System.out.println("adasdadasda");
         Thread thread = new Thread() {
             public void run() {
                 if (!isConnecting) {
@@ -678,6 +705,26 @@ public class RemoteActivity extends AppCompatActivity {
         if (readDataThread != null) {
             if (readDataThread.isAlive()) {
                 return;
+            }
+        }
+
+        if (socket != null){
+            if (!socket.isConnected()){
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        ActionBar ab = getSupportActionBar();
+                        assert ab != null;
+                        ab.setTitle(remote + ": not connected");
+                    }
+                });
+            } else {
+                runOnUiThread(new Runnable() {
+                    public void run() {
+                        ActionBar ab = getSupportActionBar();
+                        assert ab != null;
+                        ab.setTitle(remote + ": connected");
+                    }
+                });
             }
         }
 
