@@ -230,6 +230,31 @@ public class ConstructRemoteActivity extends AppCompatActivity {
         TextView changeFirstLineTextView = dialog.findViewById(R.id.changeFirstlineTextView);
         EditText changeFirstLineEditText = dialog.findViewById(R.id.changeFirstlineEditText);
         changeFirstLineEditText.setText(currentValue);
+
+        changeFirstLineEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().contains("\n")) {
+                    // Ersetze alle Zeilenumbrüche durch leere Zeichen
+                    String newText = s.toString().replace("\n", "");
+                    // Aktualisiere den Text im EditText
+                    changeFirstLineEditText.setText(newText);
+                    // Setze den Cursor an das Ende des Textes
+                    changeFirstLineEditText.setSelection(newText.length());
+                }
+            }
+        });
+
         Button okButtonChangeFirstline = dialog.findViewById(R.id.okButtonChangeFirstline);
 
         okButtonChangeFirstline.setOnClickListener(new View.OnClickListener() {
@@ -297,6 +322,31 @@ public class ConstructRemoteActivity extends AppCompatActivity {
 
         TextView buttonNameTextView = dialog.findViewById(R.id.buttonNameTextView);
         EditText buttonNameEditText = dialog.findViewById(R.id.buttonNameEditText);
+
+        buttonNameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().contains("\n")) {
+                    // Ersetze alle Zeilenumbrüche durch leere Zeichen
+                    String newText = s.toString().replace("\n", "");
+                    // Aktualisiere den Text im EditText
+                    buttonNameEditText.setText(newText);
+                    // Setze den Cursor an das Ende des Textes
+                    buttonNameEditText.setSelection(newText.length());
+                }
+            }
+        });
+
         Button addButtonAddBtn = dialog.findViewById(R.id.addButtonAddBtn);
 
         addButtonAddBtn.setOnClickListener(new View.OnClickListener() {
@@ -329,6 +379,31 @@ public class ConstructRemoteActivity extends AppCompatActivity {
 
         TextView switchNameTextView = dialog.findViewById(R.id.switchNameTextView);
         EditText switchNameEditText = dialog.findViewById(R.id.switchNameEditText);
+
+        switchNameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().contains("\n")) {
+                    // Ersetze alle Zeilenumbrüche durch leere Zeichen
+                    String newText = s.toString().replace("\n", "");
+                    // Aktualisiere den Text im EditText
+                    switchNameEditText.setText(newText);
+                    // Setze den Cursor an das Ende des Textes
+                    switchNameEditText.setSelection(newText.length());
+                }
+            }
+        });
+
         Button addButtonAddSwitch = dialog.findViewById(R.id.addButtonAddSwitch);
 
         addButtonAddSwitch.setOnClickListener(new View.OnClickListener() {
@@ -361,6 +436,30 @@ public class ConstructRemoteActivity extends AppCompatActivity {
 
         TextView nameTextView = dialog.findViewById(R.id.potiNameTextView);
         EditText nameEditText = dialog.findViewById(R.id.potiNameEditText);
+
+        nameEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.toString().contains("\n")) {
+                    // Ersetze alle Zeilenumbrüche durch leere Zeichen
+                    String newText = s.toString().replace("\n", "");
+                    // Aktualisiere den Text im EditText
+                    nameEditText.setText(newText);
+                    // Setze den Cursor an das Ende des Textes
+                    nameEditText.setSelection(newText.length());
+                }
+            }
+        });
 
         TextView minTextView = dialog.findViewById(R.id.minTextView);
         EditText minEditText = dialog.findViewById(R.id.minEditText);

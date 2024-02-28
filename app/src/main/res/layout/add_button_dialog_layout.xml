@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:textColorHint="#64686e"
         android:hint="Text..."
+        android:textColor="#000"
         android:maxLength="6"/>
 
     <Button

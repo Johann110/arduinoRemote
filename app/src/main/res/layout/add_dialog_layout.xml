@@ -59,6 +59,7 @@
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:hint="Remote..."
+        android:textColor="#000"
         android:textColorHint="#64686e"/>
 
     <Space
@@ -79,6 +80,7 @@
         android:id="@+id/deviceIPEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#000"
         android:hint="IP..."
         android:textColorHint="#64686e"
         android:singleLine="true"
@@ -99,6 +101,7 @@
         android:layout_height="wrap_content"
         android:hint="Device..."
         android:textColorHint="#64686e"
+        android:textColor="#000"
         android:singleLine="true"
         android:visibility="gone"/>
 
