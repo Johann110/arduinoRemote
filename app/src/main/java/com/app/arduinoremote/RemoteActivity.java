@@ -53,7 +53,6 @@ public class RemoteActivity extends AppCompatActivity {
     public static final UUID PORT_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
     String remote = "";
     String device = "";
-    //boolean contentLoaded = false;
     boolean isFinished = false;
 
     String bluetoothReadingData = "";
@@ -133,7 +132,7 @@ public class RemoteActivity extends AppCompatActivity {
                 return;
             } else {
                 for (BluetoothDevice iterator : devices) {
-                    if (iterator.getName().equals(device)) { //Replace with iterator.getName() if comparing Device names.{
+                    if (iterator.getName().equals(device)) {
                         BTdevice = iterator; // device is an object of type BluetoothDevice
                         break;
                     }
@@ -491,8 +490,6 @@ public class RemoteActivity extends AppCompatActivity {
                 // Connect to the ESP32's IP address and port
                 Socket socket = null;
                 try {
-                    //wsocket = new Socket(device, 80);
-                    //wsocket.connect(new InetSocketAddress(device, 80), 500);
                     socket = new Socket(device, 80);
                     PrintWriter out = new PrintWriter(socket.getOutputStream());
 
@@ -564,7 +561,7 @@ public class RemoteActivity extends AppCompatActivity {
                 });
             }
         }
-        System.out.println("adasdadasda");
+
         Thread thread = new Thread() {
             public void run() {
                 if (!isConnecting) {
@@ -572,21 +569,17 @@ public class RemoteActivity extends AppCompatActivity {
                         if (connectionTryCount > 100) {
                             break;
                         }
-                        System.out.println("Reconnecting...");
                         reconnect();
                     }
                     connectionTryCount = 0;
-                    // Verbindung wurde wiederhergestellt, Daten senden
+                    // connection restored, can send data again
                     try {
-                        System.out.println(socket);
                         if (socket != null && socket.isConnected()) {
                             OutputStream outputStream = socket.getOutputStream();
                             outputStream.write(data.getBytes());
                         }
                     } catch (IOException e) {
                         socket = null;
-                        System.out.println("resetting socket");
-                        // Fehler beim Senden der Daten nach erfolgreicher Verbindung
                         e.printStackTrace();
                     }
                 }
@@ -603,11 +596,11 @@ public class RemoteActivity extends AppCompatActivity {
                 public void run() {
                     RemoteActivity.this.runOnUiThread(new Runnable() {
                         public void run() {
-                            if (!isFinished) { // Überprüfe die Flagge
+                            if (!isFinished) { // check the flag state
                                 Toast.makeText(getApplicationContext(), "Not able to connect.", Toast.LENGTH_SHORT).show();
                                 Toast.makeText(getApplicationContext(), "Cause may be the remote name", Toast.LENGTH_SHORT).show();
-                                finish(); // finish() im UI-Thread aufrufen
-                                isFinished = true; // Setze die Flagge auf true
+                                finish();
+                                isFinished = true;
                             }
                         }
                     });
@@ -615,6 +608,7 @@ public class RemoteActivity extends AppCompatActivity {
             }.start();
             return;
         }
+
         if (!isConnecting) {
             socket = null;
             int count = 0;
@@ -623,7 +617,7 @@ public class RemoteActivity extends AppCompatActivity {
                 if (count > 100) {
                     break;
                 }
-                System.out.println("3");
+
                 try {
                     isConnecting = true;
 
@@ -737,7 +731,6 @@ public class RemoteActivity extends AppCompatActivity {
                             if (connectionTryCount > 100) {
                                 break;
                             }
-                            System.out.println("Reconnecting...");
                             reconnect();
                         }
                     } else {
@@ -751,7 +744,6 @@ public class RemoteActivity extends AppCompatActivity {
                             if (incomingData.equals("")) {
                                 break;
                             }
-                            //System.out.println(bluetoothReadingData);
                             bluetoothReadingData += incomingData;
                         }
                         textField.setText(bluetoothReadingData);
@@ -765,10 +757,8 @@ public class RemoteActivity extends AppCompatActivity {
                             ab.setTitle(remote + ": not connected");
                         }
                     });
-                    System.out.println("nulling socket 2");
                     socket = null;
                 } catch (NullPointerException e) {
-                    Log.wtf("nullpointer", "null");
                     socket = null;
                 }
             }
@@ -819,7 +809,6 @@ public class RemoteActivity extends AppCompatActivity {
         thread.start();
 
     }
-
 
     @Override
     public void onBackPressed() {

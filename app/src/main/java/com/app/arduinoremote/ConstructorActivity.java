@@ -286,7 +286,6 @@ public class ConstructorActivity extends AppCompatActivity {
         snack.setAction("Ok", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Call your action method here
                 snack.dismiss();
             }
         });

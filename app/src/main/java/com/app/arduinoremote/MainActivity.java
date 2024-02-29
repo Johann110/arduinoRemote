@@ -31,7 +31,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     File folder;
 
-    static boolean wifiIsPicked = true;
     List<String> remotes = new ArrayList<>();
     @RequiresApi(api = Build.VERSION_CODES.S)
     @Override
@@ -134,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void askForBluetoothPermission(){
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_DENIED) {
-            // You can use the API that requires the permission.
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.BLUETOOTH_CONNECT},1);
         }
     }

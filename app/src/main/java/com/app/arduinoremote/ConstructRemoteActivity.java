@@ -51,17 +51,11 @@ public class ConstructRemoteActivity extends AppCompatActivity {
     String selectedElement = "";
     TextView selectedElementTextView;
 
-    //showAddButtonDialog()
-    String inputText;
     UserTextField userTextField;
     // creating code
     List<String> split = new ArrayList<>();
     String code = "";
     List<Integer> codeNumbers = new ArrayList<>();
-
-    // display size
-    int screenWidthInPixels;
-    int screenHeightInPixels;
 
     // ImageView and textView for the elements
     TextView buttonTextView;
@@ -83,7 +77,6 @@ public class ConstructRemoteActivity extends AppCompatActivity {
     float downY = 0;
     int currentRotation;
 
-    int b = 0;
     @Override
     @SuppressLint("ClickableViewAccessibility")
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,12 +126,6 @@ public class ConstructRemoteActivity extends AppCompatActivity {
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
             actionBar.setCustomView(R.layout.construct_remote_title_layout);
         }
-
-        // display size
-        DisplayMetrics metrics = getResources().getDisplayMetrics();
-        screenWidthInPixels = metrics.widthPixels;
-        screenHeightInPixels = metrics.heightPixels;
-        int distanceForTextview = (int) screenHeightInPixels * 4/100;
 
         setRemoteContent();
 
@@ -245,11 +232,8 @@ public class ConstructRemoteActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.toString().contains("\n")) {
-                    // Ersetze alle Zeilenumbrüche durch leere Zeichen
                     String newText = s.toString().replace("\n", "");
-                    // Aktualisiere den Text im EditText
                     changeFirstLineEditText.setText(newText);
-                    // Setze den Cursor an das Ende des Textes
                     changeFirstLineEditText.setSelection(newText.length());
                 }
             }
@@ -337,11 +321,8 @@ public class ConstructRemoteActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.toString().contains("\n")) {
-                    // Ersetze alle Zeilenumbrüche durch leere Zeichen
                     String newText = s.toString().replace("\n", "");
-                    // Aktualisiere den Text im EditText
                     buttonNameEditText.setText(newText);
-                    // Setze den Cursor an das Ende des Textes
                     buttonNameEditText.setSelection(newText.length());
                 }
             }
@@ -394,11 +375,8 @@ public class ConstructRemoteActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.toString().contains("\n")) {
-                    // Ersetze alle Zeilenumbrüche durch leere Zeichen
                     String newText = s.toString().replace("\n", "");
-                    // Aktualisiere den Text im EditText
                     switchNameEditText.setText(newText);
-                    // Setze den Cursor an das Ende des Textes
                     switchNameEditText.setSelection(newText.length());
                 }
             }
@@ -451,11 +429,8 @@ public class ConstructRemoteActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.toString().contains("\n")) {
-                    // Ersetze alle Zeilenumbrüche durch leere Zeichen
                     String newText = s.toString().replace("\n", "");
-                    // Aktualisiere den Text im EditText
                     nameEditText.setText(newText);
-                    // Setze den Cursor an das Ende des Textes
                     nameEditText.setSelection(newText.length());
                 }
             }
@@ -708,7 +683,6 @@ public class ConstructRemoteActivity extends AppCompatActivity {
         snack.setAction("Ok", new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Call your action method here
                 snack.dismiss();
             }
         });
@@ -858,7 +832,6 @@ public class ConstructRemoteActivity extends AppCompatActivity {
                             return true;
                         }
                     });
-                    //layout.addView(button);
                     layout.addView(buttonTextView);
 
                 } else if (split.get(1).charAt(0) == 's'){
