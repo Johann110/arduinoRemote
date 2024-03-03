@@ -1,8 +1,8 @@
 <h1>Content</h1>
 
-1. [Introduction](#introduction)
-2. [WiFi](#wifiexample)
-3. [Bluetooth](#bluetoothexample)
+1. [Introduction](README.md#L<8>)
+2. [Wifi example](README.md#L<14>)
+3. [Bluetooth example](README.md#L<192>)
 5. [Notes](README.md#L<383>)
 
 <h1>Introduction</h1>
