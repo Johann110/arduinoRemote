@@ -226,7 +226,7 @@ Code:
 ```cpp
 void loop() {
   data = "";
-  // Read received messages (LED control command)
+  // Read received messages
   if (SerialBT.available()) {
     delay(1); // pause the controller for reading the incoming data correctly
     while (SerialBT.available()) {
