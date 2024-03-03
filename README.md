@@ -1,19 +1,19 @@
 <h1>Content</h1>
 
-1. [Introduction](README.md#L<8>)
-2. [Wifi example](README.md#L<14>)
-3. [Bluetooth example](README.md#L<192>)
-5. [Notes](README.md#L<383>)
+1. [Introduction](#introduction)
+2. [Wifi example](#wifi-example)
+3. [Bluetooth example](#bluetooth-example)
+5. [Notes](#notes)
 
-[end of file](#eof)
-
-<h1>Introduction</h1>
+<a id="introduction"></a>
+# Introduction
 With this application you can control microcontrollers (Arduino and the like) via Wi-Fi or Bluetooth.
 You will no longer need to solder buttons, switches, potentiometers and LCD displays, thereby occupying pins on the controller.
 In the application, you can create a remote control for your project and add controls there. While the application is running, each button/switch, etc. when clicked, sends its unique code.
 All that remains is to program the reaction in the controller to the incoming code.
 
-<h1>The following example works with a WEMOS (WiFi)</h1>
+<a id="wifi-example"></a>
+# The following example works with a WEMOS (WiFi)
 To control your microcontroller through a WiFi access point, you must perform the following steps:
 
 <b>Step 1:</b><br>
@@ -191,7 +191,8 @@ void loop() {
 }
 ```
 
-<h1>The following example works with the ESP-WROOM-32 (Bluetooth)</h1>
+<a id="bluetooth-example"></a>
+# The following example works with the ESP-WROOM-32 (Bluetooth)
 To control your microcontroller via Bluetooth, you must perform the following steps:<br><br>
 <b>Step 1:</b><br>
 Upload the code to your controller to start Bluetooth.<br>
@@ -382,7 +383,8 @@ void bluetoothPrintLine(String line) {
 }
 ```
 
-<h1>Notes</h1>
+<a id="notes"></a>
+# Notes
 Try to avoid using the delay() function, since while delay is running,
 receiving commands does not work. Instead of delay, it is better to use a millis timer.
 To do this, create a variable uint32_t tmr1; above setup() then add the following code:<br>
@@ -393,6 +395,6 @@ if (millis() - tmr1 >= 500) { // 500 milliseconds
   //Serial.println("my timer is working!"); // here you can check that it works if you want
 }
 ```
-<a id="eof"></a>
 
-# eof
+
+
