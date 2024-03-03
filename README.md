@@ -397,5 +397,5 @@ if (millis() - tmr1 >= 500) { // 500 milliseconds
 }
 ```
 
-
+If you just want to install the app, I added a APK file "arduinoRemote.apk" for the installation
 
