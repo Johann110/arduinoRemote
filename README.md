@@ -298,7 +298,7 @@ create a remote and add controls in the following order:<br>
 2. Button<br>
 3. Text field<br>
 4. Potentiometer min = 1 max = 3<br>
-5. Potentiometer min = 0 max = 500\<br><br>
+5. Potentiometer min = 0 max = 500<br><br>
 Now copy and paste the following code:<br>
 ```cpp
 #include "BluetoothSerial.h"
