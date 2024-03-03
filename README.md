@@ -64,7 +64,7 @@ if(client){
 Start your controller. On your phone, in WiFi networks, find the new "Wemos HotSpot" hotspot. Connect to this hotspot.<br><br>
 <b>Step 6:</b><br>
 In the app, go to the first tab (the tab labeled "ARDUINO REMOTE") and select the remote from Step 3. Turn on the serial monitor and press your button. 
-When a button is pressed, the serial monitor should show an individual code for this button - b0x1. When released, it will show - b0x0.\n\nIf you see these codes, then the everything is working, the application sends codes and arduino receives them.<br><br>
+When a button is pressed, the serial monitor should show an individual code for this button - b0x1. When released, it will show - b0x0. If you see these codes, then the everything is working, the application sends codes and arduino receives them.<br><br>
 You can also add a switch, a potentiometer and a text field.<br><br>
 <b>The switch</b> sends 1 at the end of the individual code when clicked and 0 when clicked again.<br><br>
 <b>The potentiometer</b> sends an individual code and at the end of the code the value.<br>
@@ -273,7 +273,7 @@ if (potentiometerParts[0] != "") {
   Serial.println("value: " + String(potentiometerValue));
 }
 ```
-<b>The text field</b> is used to receive information from the arduino. To make the text field work, we call the bluetoothPrintLine() function. Write a string you want to send in the brackets. <b>IMPORTANT:</b> there must be an asterisk \"*\" at the end of the string, this is a stop character so that the application detects the end of the message.<br>
+<b>The text field</b> is used to receive information from the arduino. To make the text field work, we call the bluetoothPrintLine() function. Write a string you want to send in the brackets. <b>IMPORTANT:</b> there must be an asterisk "*" at the end of the string, this is a stop character so that the application detects the end of the message.<br>
 Example:<br>
 ```cpp
 // in loop function
