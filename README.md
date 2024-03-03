@@ -5,14 +5,14 @@
 3. [Bluetooth example](#bluetooth-example)
 5. [Notes](#notes)
 
-<a id="introduction"></a><br><br>
+<a id="introduction"></a><br>
 # Introduction
 With this application you can control microcontrollers (Arduino and the like) via Wi-Fi or Bluetooth.
 You will no longer need to solder buttons, switches, potentiometers and LCD displays, thereby occupying pins on the controller.
 In the application, you can create a remote control for your project and add controls there. While the application is running, each button/switch, etc. when clicked, sends its unique code.
 All that remains is to program the reaction in the controller to the incoming code.
 
-<a id="wifi-example"></a><br><br>
+<a id="wifi-example"></a><br>
 # The following example works with a WEMOS (WiFi)
 To control your microcontroller through a WiFi access point, you must perform the following steps:
 
@@ -191,7 +191,7 @@ void loop() {
 }
 ```
 
-<a id="bluetooth-example"></a><br><br>
+<a id="bluetooth-example"></a><br>
 # The following example works with the ESP-WROOM-32 (Bluetooth)
 To control your microcontroller via Bluetooth, you must perform the following steps:<br><br>
 <b>Step 1:</b><br>
@@ -383,7 +383,7 @@ void bluetoothPrintLine(String line) {
 }
 ```
 
-<a id="notes"></a><br><br>
+<a id="notes"></a><br>
 # Notes
 Try to avoid using the delay() function, since while delay is running,
 receiving commands does not work. Instead of delay, it is better to use a millis timer.
