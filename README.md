@@ -5,6 +5,8 @@
 3. [Bluetooth example](README.md#L<192>)
 5. [Notes](README.md#L<383>)
 
+[end of file](#eof)
+
 <h1>Introduction</h1>
 With this application you can control microcontrollers (Arduino and the like) via Wi-Fi or Bluetooth.
 You will no longer need to solder buttons, switches, potentiometers and LCD displays, thereby occupying pins on the controller.
@@ -391,3 +393,6 @@ if (millis() - tmr1 >= 500) { // 500 milliseconds
   //Serial.println("my timer is working!"); // here you can check that it works if you want
 }
 ```
+<a id="eof"></a>
+
+# eof
