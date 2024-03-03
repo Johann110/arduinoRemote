@@ -5,7 +5,7 @@
 3. [Bluetooth example](#bluetooth-example)
 5. [Notes](#notes)
 
-<a id="introduction"></a>
+<a id="introduction"></a><br><br>
 # Introduction
 With this application you can control microcontrollers (Arduino and the like) via Wi-Fi or Bluetooth.
 You will no longer need to solder buttons, switches, potentiometers and LCD displays, thereby occupying pins on the controller.
