@@ -1,3 +1,11 @@
+<h1>Content</h1>
+
+1. [Introduction](#introduction)
+2. [WiFi](#wifiexample)
+3. [Bluetooth](#bluetoothexample)
+5. [Notes](README.md#L<383>)
+
+<h1>Introduction</h1>
 With this application you can control microcontrollers (Arduino and the like) via Wi-Fi or Bluetooth.
 You will no longer need to solder buttons, switches, potentiometers and LCD displays, thereby occupying pins on the controller.
 In the application, you can create a remote control for your project and add controls there. While the application is running, each button/switch, etc. when clicked, sends its unique code.
@@ -371,6 +379,7 @@ void bluetoothPrintLine(String line) {
   }
 }
 ```
+
 <h1>Notes</h1>
 Try to avoid using the delay() function, since while delay is running,
 receiving commands does not work. Instead of delay, it is better to use a millis timer.
