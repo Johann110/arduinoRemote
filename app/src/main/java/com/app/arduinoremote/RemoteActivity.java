@@ -746,7 +746,13 @@ public class RemoteActivity extends AppCompatActivity {
                             }
                             bluetoothReadingData += incomingData;
                         }
-                        textField.setText(bluetoothReadingData);
+                        System.out.println(bluetoothReadingData);
+                        try {
+                            textField.setText(bluetoothReadingData);
+                        } catch (Exception e){
+                            System.out.println(e);
+                        }
+
                         bluetoothReadingData = "";
                     }
                 } catch (IOException e) {
