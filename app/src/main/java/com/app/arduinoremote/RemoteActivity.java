@@ -746,7 +746,9 @@ public class RemoteActivity extends AppCompatActivity {
                             }
                             bluetoothReadingData += incomingData;
                         }
-                        System.out.println(bluetoothReadingData);
+
+                        bluetoothReadingData = bluetoothReadingData.replaceAll("#br#", "\n");
+
                         try {
                             textField.setText(bluetoothReadingData);
                         } catch (Exception e){
@@ -788,8 +790,12 @@ public class RemoteActivity extends AppCompatActivity {
                             new InputStreamReader(inputStream));
                     String data1 = "";
                     data1 = br.readLine();
-                    String finalData = data1;
-                    textField.setText(finalData);
+                    try {
+                        String finalData = data1.replaceAll("#br#", "\n");
+                        textField.setText(finalData);
+                    } catch (Exception e){
+                        // ignore
+                    }
 
                     // Close the connection
                     inputStream.close();
