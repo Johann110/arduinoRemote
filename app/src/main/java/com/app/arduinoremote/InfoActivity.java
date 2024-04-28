@@ -23,6 +23,7 @@ public class InfoActivity extends AppCompatActivity {
     TextView wifiText8;
     TextView wifiText9;
     TextView wifiText10;
+    TextView wifiText11;
 
     TextView btText1;
     TextView btText2;
@@ -34,6 +35,7 @@ public class InfoActivity extends AppCompatActivity {
     TextView btText8;
     TextView btText9;
     TextView btText10;
+    TextView btText11;
 
     Button copyWiFiText2Btn;
     Button copyWiFiText4Btn;
@@ -61,6 +63,7 @@ public class InfoActivity extends AppCompatActivity {
         wifiText8 = findViewById(R.id.wifiText8);
         wifiText9 = findViewById(R.id.wifiText9);
         wifiText10 = findViewById(R.id.wifiText10);
+        wifiText11 = findViewById(R.id.wifiText11);
         copyWiFiText2Btn = findViewById(R.id.copyWiFiText2Btn);
         copyWiFiText4Btn = findViewById(R.id.copyWiFiText4Btn);
         copyWiFiText6Btn = findViewById(R.id.copyWiFiText6Btn);
@@ -77,6 +80,7 @@ public class InfoActivity extends AppCompatActivity {
         btText8 = findViewById(R.id.btText8);
         btText9 = findViewById(R.id.btText9);
         btText10 = findViewById(R.id.btText10);
+        btText11 = findViewById(R.id.btText11);
         copyBTText2Btn = findViewById(R.id.copyBTText2Btn);
         copyBTText4Btn = findViewById(R.id.copyBTText4Btn);
         copyBTText6Btn = findViewById(R.id.copyBTText6Btn);
@@ -106,6 +110,7 @@ public class InfoActivity extends AppCompatActivity {
         wifiText8.setVisibility(View.GONE);
         wifiText9.setVisibility(View.GONE);
         wifiText10.setVisibility(View.GONE);
+        wifiText11.setVisibility(View.GONE);
         copyWiFiText2Btn.setVisibility(View.GONE);
         copyWiFiText4Btn.setVisibility(View.GONE);
         copyWiFiText6Btn.setVisibility(View.GONE);
@@ -122,6 +127,7 @@ public class InfoActivity extends AppCompatActivity {
         btText8.setVisibility(View.VISIBLE);
         btText9.setVisibility(View.VISIBLE);
         btText10.setVisibility(View.VISIBLE);
+        btText11.setVisibility(View.VISIBLE);
         copyBTText2Btn.setVisibility(View.VISIBLE);
         copyBTText4Btn.setVisibility(View.VISIBLE);
         copyBTText6Btn.setVisibility(View.VISIBLE);
@@ -140,6 +146,7 @@ public class InfoActivity extends AppCompatActivity {
         btText8.setVisibility(View.GONE);
         btText9.setVisibility(View.GONE);
         btText10.setVisibility(View.GONE);
+        btText11.setVisibility(View.GONE);
         copyBTText2Btn.setVisibility(View.GONE);
         copyBTText4Btn.setVisibility(View.GONE);
         copyBTText6Btn.setVisibility(View.GONE);
@@ -156,6 +163,7 @@ public class InfoActivity extends AppCompatActivity {
         wifiText8.setVisibility(View.VISIBLE);
         wifiText9.setVisibility(View.VISIBLE);
         wifiText10.setVisibility(View.VISIBLE);
+        wifiText11.setVisibility(View.VISIBLE);
         copyWiFiText2Btn.setVisibility(View.VISIBLE);
         copyWiFiText4Btn.setVisibility(View.VISIBLE);
         copyWiFiText6Btn.setVisibility(View.VISIBLE);

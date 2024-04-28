@@ -186,6 +186,15 @@
                 android:visibility="gone"
                 android:onClick="copyBTText10Click"/>
 
+            <TextView
+                android:id="@+id/btText11"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/btText11" />
+
             <!-- Wifi manual -->
             <TextView
                 android:id="@+id/wifiText1"
@@ -326,6 +335,15 @@
                 android:text="Copy"
                 android:visibility="gone"
                 android:onClick="copyWiFiText10Click"/>
+
+            <TextView
+                android:id="@+id/wifiText11"
+                tools:ignore="HardcodedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:visibility="gone"
+                android:text="@string/wifiText11" />
         </LinearLayout>
     </ScrollView>
 

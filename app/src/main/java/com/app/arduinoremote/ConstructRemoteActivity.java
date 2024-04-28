@@ -800,10 +800,10 @@ public class ConstructRemoteActivity extends AppCompatActivity {
                                     startClickTime = Calendar.getInstance().getTimeInMillis();
                                     downX = motionEvent.getX();
                                     downY = motionEvent.getY();
-                                    currentRotation = (int) textViewsForButtons.get(finalI).getRotation();
-                                    if (textViewsForButtons.get(finalI).getRotation() != 0){
-                                        textViewsForButtons.get(finalI).setRotation(0);
-                                    }
+//                                    currentRotation = (int) textViewsForButtons.get(finalI).getRotation();
+//                                    if (textViewsForButtons.get(finalI).getRotation() != 0){
+//                                        textViewsForButtons.get(finalI).setRotation(0);
+//                                    }
                                 case MotionEvent.ACTION_MOVE:
 
                                     float movedX, movedY;
@@ -812,15 +812,22 @@ public class ConstructRemoteActivity extends AppCompatActivity {
 
                                     float distanceX = movedX-downX;
                                     float distanceY = movedY-downY;
-                                    textViewsForButtons.get(finalI).setX(textViewsForButtons.get(finalI).getX() + distanceX);
-                                    textViewsForButtons.get(finalI).setY(textViewsForButtons.get(finalI).getY() + distanceY);
+
+                                    float angle = Integer.parseInt(userButtons.get(finalI).getRotation()) * (float)(Math.PI / 180);
+                                    float sinAngle = (float) Math.sin(angle);
+                                    float cosAngle = (float) Math.cos(angle);
+
+                                    float transformedX = cosAngle * (movedX - downX) - sinAngle * (movedY - downY);
+                                    float transformedY = sinAngle * (movedX - downX) + cosAngle * (movedY - downY);
+                                    textViewsForButtons.get(finalI).setX(textViewsForButtons.get(finalI).getX() + transformedX);
+                                    textViewsForButtons.get(finalI).setY(textViewsForButtons.get(finalI).getY() + transformedY);
                                     break;
 
                                 case MotionEvent.ACTION_UP: {
                                     userButtons.get(finalI).setPosX(String.valueOf(textViewsForButtons.get(finalI).getX()));
                                     userButtons.get(finalI).setPosY(String.valueOf(textViewsForButtons.get(finalI).getY()));
                                     long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
-                                    textViewsForButtons.get(finalI).setRotation(currentRotation);
+//                                    textViewsForButtons.get(finalI).setRotation(currentRotation);
                                     if(clickDuration < MAX_CLICK_DURATION) {
                                         addOptionButtons(userButtons.get(finalI).getName());
                                     } else {
@@ -868,10 +875,10 @@ public class ConstructRemoteActivity extends AppCompatActivity {
                                     startClickTime = Calendar.getInstance().getTimeInMillis();
                                     downX = motionEvent.getX();
                                     downY = motionEvent.getY();
-                                    currentRotation = (int) textViewsForButtons.get(finalI).getRotation();
-                                    if (textViewsForButtons.get(finalI).getRotation() != 0){
-                                        textViewsForButtons.get(finalI).setRotation(0);
-                                    }
+//                                    currentRotation = (int) textViewsForButtons.get(finalI).getRotation();
+//                                    if (textViewsForButtons.get(finalI).getRotation() != 0){
+//                                        textViewsForButtons.get(finalI).setRotation(0);
+//                                    }
                                 case MotionEvent.ACTION_MOVE:
                                     float movedX, movedY;
                                     movedX = motionEvent.getX();
@@ -879,15 +886,21 @@ public class ConstructRemoteActivity extends AppCompatActivity {
 
                                     float distanceX = movedX-downX;
                                     float distanceY = movedY-downY;
-                                    textViewsForButtons.get(finalI).setX(textViewsForButtons.get(finalI).getX() + distanceX);
-                                    textViewsForButtons.get(finalI).setY(textViewsForButtons.get(finalI).getY() + distanceY);
+                                    float angle = textViewsForButtons.get(finalI).getRotation() * (float)(Math.PI / 180);
+                                    float sinAngle = (float) Math.sin(angle);
+                                    float cosAngle = (float) Math.cos(angle);
+
+                                    float transformedX = cosAngle * (movedX - downX) - sinAngle * (movedY - downY);
+                                    float transformedY = sinAngle * (movedX - downX) + cosAngle * (movedY - downY);
+                                    textViewsForButtons.get(finalI).setX(textViewsForButtons.get(finalI).getX() + transformedX);
+                                    textViewsForButtons.get(finalI).setY(textViewsForButtons.get(finalI).getY() + transformedY);
                                     break;
 
                                 case MotionEvent.ACTION_UP: {
                                     userButtons.get(finalI).setPosX(String.valueOf(textViewsForButtons.get(finalI).getX()));
                                     userButtons.get(finalI).setPosY(String.valueOf(textViewsForButtons.get(finalI).getY()));
                                     long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
-                                    textViewsForButtons.get(finalI).setRotation(currentRotation);
+                                    //textViewsForButtons.get(finalI).setRotation(currentRotation);
                                     if(clickDuration < MAX_CLICK_DURATION) {
                                         addOptionButtons(userButtons.get(finalI).getName());
                                     } else {
@@ -1039,10 +1052,10 @@ public class ConstructRemoteActivity extends AppCompatActivity {
                                     startClickTime = Calendar.getInstance().getTimeInMillis();
                                     downX = motionEvent.getX();
                                     downY = motionEvent.getY();
-                                    currentRotation = (int) textField.getRotation();
-                                    if (textField.getRotation() != 0){
-                                        textField.setRotation(0);
-                                    }
+//                                    currentRotation = (int) textField.getRotation();
+//                                    if (textField.getRotation() != 0){
+//                                        textField.setRotation(0);
+//                                    }
                                 case MotionEvent.ACTION_MOVE:
                                     float movedX, movedY;
                                     movedX = motionEvent.getX();
@@ -1050,13 +1063,20 @@ public class ConstructRemoteActivity extends AppCompatActivity {
 
                                     float distanceX = movedX-downX;
                                     float distanceY = movedY-downY;
-                                    textField.setX(textField.getX() + distanceX);
-                                    textField.setY(textField.getY() + distanceY);
-                                    userTextField.setX(Objects.toString(textField.getX() + distanceX));
-                                    userTextField.setY(Objects.toString(textField.getY() + distanceY));
+                                    float angle = textField.getRotation() * (float)(Math.PI / 180);
+                                    float sinAngle = (float) Math.sin(angle);
+                                    float cosAngle = (float) Math.cos(angle);
+
+                                    float transformedX = cosAngle * (movedX - downX) - sinAngle * (movedY - downY);
+                                    float transformedY = sinAngle * (movedX - downX) + cosAngle * (movedY - downY);
+
+                                    textField.setX(textField.getX() + transformedX);
+                                    textField.setY(textField.getY() + transformedY);
+                                    userTextField.setX(Objects.toString(textField.getX() + transformedX));
+                                    userTextField.setY(Objects.toString(textField.getY() + transformedY));
                                     break;
                                 case MotionEvent.ACTION_UP: {
-                                    textField.setRotation(currentRotation);
+                                    //textField.setRotation(currentRotation);
                                     userTextField.setX(Objects.toString(textField.getX()));
                                     userTextField.setY(Objects.toString(textField.getY()));
                                     long clickDuration = Calendar.getInstance().getTimeInMillis() - startClickTime;
@@ -1302,6 +1322,22 @@ public class ConstructRemoteActivity extends AppCompatActivity {
         save();
         setRemoteContent();
     }
+
+//    public void rotatePoti(View v){
+//        for(int i = 0; i < userPotis.size(); i++){
+//            if (selectedElement.equals(userPotis.get(i).getName())){
+//
+//                int rotationInt = Integer.parseInt(userPotis.get(i).getRotation());
+//                rotationInt += 90;
+//                if (rotationInt == 360){
+//                    rotationInt = 0;
+//                }
+//                userPotis.get(i).setRotation(Objects.toString(rotationInt));
+//            }
+//        }
+//        save();
+//        setRemoteContent();
+//    }
 
     public void plusWidthClick(View v){
         for(int i = 0; i < userPotis.size(); i++){
