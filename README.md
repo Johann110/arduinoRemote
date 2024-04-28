@@ -4,7 +4,8 @@
 2. [Wifi example](#wifi-example)
 3. [Bluetooth example](#bluetooth-example)
 5. [Notes](#notes)
-
+5. [Troubleshooting](#troubleshooting)
+6. 
 <a id="introduction"></a><br>
 # Introduction
 With this application you can control microcontrollers (Arduino and the like) via Wi-Fi or Bluetooth.
@@ -400,4 +401,27 @@ if (millis() - tmr1 >= 500) { // 500 milliseconds
 You can add line breaks for your textfield text by adding "#br#" to the send string.
 
 If you just want to install the app, I added a APK file "arduinoRemote.apk" for the installation
+
+All remotes are saved in .txt files in:<br>
+Android -> data -> com.app.arduinoremote -> files -> Remotes<br>
+I do not recommend to do changes in the .txt files manually, because it can lead to errors and unexpected behaviour.
+If you have Android 13+ you cannot access this files directly without root permissions. However it is possible by connecting your device to a PC.
+
+<a id="troubleshooting"></a><br>
+# Troubleshooting
+<b>Can't connect to the controller via Bluetooth:</b><br>
+Check if Bluetooth has started on the controller, by starting the controller and check if the message "Bluetooth started" appears in the port monitor. If you don't see this message restart your controller.
+Make sure you added the BT device to the BT devicelist in your phone.
+If the app still not connecting and throwing the error "Not able to connect. Cause may be the remote name", check if the name in your controller, set
+in SerialBT.begin(); matches with the given device name in the remote. The names are case sensitive, which means that it is important wheter the letters are uppercase or lowercase.
+To check the name in the app open the remote in the constructor and click the settings button.
+
+<b>Can't connect to the controller via WiFi:</b><br>
+Make sure you connected your phone to the hotspot of the controller. If so, check wheter the ip given in the remote matches with the ip showing in the port monitor of the controller.
+The ip is showed in the port monitor right after the controller starts. If the ip is not showing restart your controller. To change the ip in the app open the remote in the remote constructor and click the
+settings button.
+
+<b>The app is not showing any text sent by the controller:</b><br>
+Make sure you added the asterisk "*" at the end of the message.
+
 
