@@ -1,7 +1,7 @@
 <h1>Content</h1>
 
 1. [Introduction](#introduction)
-2. [WiFi example](#wifi-example)
+2. [Wi-Fi example](#wifi-example)
 3. [Bluetooth example](#bluetooth-example)
 5. [Notes](#notes)
 6. [Troubleshooting](#troubleshooting)
@@ -14,11 +14,11 @@ In the application, you can create a remote control for your project and add con
 All that remains is to program the reaction in the controller to the incoming code.
 
 <a id="wifi-example"></a><br>
-# The following example works with a WEMOS (WiFi)
-To control your microcontroller through a WiFi access point, you must perform the following steps:
+# The following example works with a WEMOS (Wi-Fi)
+To control your microcontroller through a Wi-Fi access point, you must perform the following steps:
 
 <b>Step 1:</b><br>
-Launch a WiFi hotspot on your controller.<br>
+Launch a Wi-Fi hotspot on your controller.<br>
 Code:
 ```cpp
 #include <ESP8266WiFi.h>
@@ -42,7 +42,7 @@ Turn on the serial monitor in the Arduino IDE. You will see the IP of your acces
 
 <b>Step 3:</b><br>
 Click on "Remote constructor" - You have entered the remote constructor where you can create, delete and edit remotes.
-Click on "Add new remote" to create a new remote. Click WiFi. Enter the name of this remote (for example, the name of your project) and the IP address from Step 2. Click OK. Your new remote will appear on this tab. 
+Click on "Add new remote" to create a new remote. Click Wi-Fi. Enter the name of this remote (for example, the name of your project) and the IP address from Step 2. Click OK. Your new remote will appear on this tab. 
 Click on it and the editor of this remote will open. Click on ADD at the top, select Button. Enter the name of the button (For example "X"), click ADD. Move the button to a convenient place for you.
 Clicking the button will bring up the change menu for that button.
 
@@ -62,7 +62,7 @@ if(client){
 }
 ```
 <b>Step 5:</b><br>
-Start your controller. On your phone, in WiFi networks, find the new "Wemos HotSpot" hotspot. Connect to this hotspot.<br><br>
+Start your controller. On your phone, in Wi-Fi networks, find the new "Wemos HotSpot" hotspot. Connect to this hotspot.<br><br>
 <b>Step 6:</b><br>
 In the app, go to the first tab (the tab labeled "ARDUINO REMOTE") and select the remote from Step 3. Turn on the serial monitor and press your button. 
 When a button is pressed, the serial monitor should show an individual code for this button - b0x1. When released, it will show - b0x0. If you see these codes, then the everything is working, the application sends codes and arduino receives them.<br><br>
@@ -416,14 +416,14 @@ If the app still not connecting and throwing the error "Not able to connect. Cau
 in SerialBT.begin(); matches with the given device name in the remote. The names are case sensitive, which means that it is important wheter the letters are uppercase or lowercase.
 To check the name in the app open the remote in the constructor and click the settings button.
 
-<b>Can't connect to the controller via WiFi:</b><br>
+<b>Can't connect to the controller via Wi-Fi:</b><br>
 Make sure you connected your phone to the hotspot of the controller. If so, check wheter the ip given in the remote matches with the ip showing in the port monitor of the controller.
 The ip is showed in the port monitor right after the controller starts. If the ip is not showing restart your controller. To change the ip in the app open the remote in the remote constructor and click the
 settings button.
 
-<b>While connecting via WiFi the app is showing that it is connected but the controller does not react:</b><br>
-If the app is showing that you are connected, but the controller is not receiving anything, you probably connected to the wrong WiFi.
-If you are at home your phone probably switched to the home WiFi.
+<b>While connecting via Wi-Fi the app is showing that it is connected but the controller does not react:</b><br>
+If the app is showing that you are connected, but the controller is not receiving anything, you probably connected to the wrong Wi-Fi.
+If you are at home your phone probably switched to the home Wi-Fi.
 
 <b>The app is not showing any text sent by the controller:</b><br>
 Make sure you added the asterisk "*" at the end of the message.
