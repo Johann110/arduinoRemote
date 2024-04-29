@@ -421,6 +421,10 @@ Make sure you connected your phone to the hotspot of the controller. If so, chec
 The ip is showed in the port monitor right after the controller starts. If the ip is not showing restart your controller. To change the ip in the app open the remote in the remote constructor and click the
 settings button.
 
+<b>While connecting via WiFi the app is showing that it is connected but the controller does not react:</b><br>
+If the app is showing that you are connected, but the controller is not receiving anything, you probably connected to the wrong WiFi.
+If you are at home your phone probably switched to the home WiFi.
+
 <b>The app is not showing any text sent by the controller:</b><br>
 Make sure you added the asterisk "*" at the end of the message.
 
