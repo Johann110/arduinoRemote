@@ -424,4 +424,8 @@ settings button.
 <b>The app is not showing any text sent by the controller:</b><br>
 Make sure you added the asterisk "*" at the end of the message.
 
+The controller did not recognized the code from the switch/button:
+Your controller is probably busy with other stuff, because of that it receives multiple incoming codes and concatenates them together.
+To be sure the controller reacts even if the codes are stacked up, you can just check if the incoming data <b>contains</b>
+the desired code instead of checking whether the code <b>is equal to</b> the incoming data.
 
