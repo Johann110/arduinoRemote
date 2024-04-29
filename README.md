@@ -1,7 +1,7 @@
 <h1>Content</h1>
 
 1. [Introduction](#introduction)
-2. [Wifi example](#wifi-example)
+2. [WiFi example](#wifi-example)
 3. [Bluetooth example](#bluetooth-example)
 5. [Notes](#notes)
 6. [Troubleshooting](#troubleshooting)
