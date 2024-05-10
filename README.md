@@ -1,3 +1,5 @@
+![Static Badge](https://img.shields.io/badge/Android_version-8+-blue)
+
 <h1>Content</h1>
 
 1. [Introduction](#introduction)
@@ -404,8 +406,9 @@ If you just want to install the app, I added a APK file "arduinoRemote.apk" for 
 
 All remotes are saved in .txt files in:<br>
 Android -> data -> com.app.arduinoremote -> files -> Remotes<br>
-I do not recommend to do changes in the .txt files manually, because it can lead to errors and unexpected behaviour.
-If you have Android 13+ you cannot access this files directly without root permissions. However it is possible by connecting your device to a PC.
+> [!CAUTION]
+> I do not recommend to do changes in the .txt files manually, because it can lead to errors and unexpected behaviour.
+> If you have Android 13+ you cannot access this files directly without root permissions. However it is possible by connecting your device to a PC.
 
 <a id="troubleshooting"></a><br>
 # Troubleshooting
