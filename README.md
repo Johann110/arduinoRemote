@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/Android_version-8+-blue)
+![Static Badge](https://img.shields.io/badge/Android_version-8+-blue) &nbsp; ![Static Badge](https://img.shields.io/badge/License-MIT_license-80f75c)
 
 <h1>Content</h1>
 
