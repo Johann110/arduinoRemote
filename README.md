@@ -405,7 +405,7 @@ You can add line breaks for your textfield text by adding "#br#" to the send str
 If you just want to install the app, I added a APK file "arduinoRemote.apk" for the installation
 
 All remotes are saved in .txt files in:<br>
-Android -> data -> com.app.arduinoremote -> files -> Remotes<br>
+Android -> data -> com.app.arduinoremote -> files -> Remotes<br><br>
 If you have Android 13+ you cannot access this files directly without root permissions. However it is possible by connecting your device to a PC.
 > [!CAUTION]
 > I do not recommend to do changes in the .txt files manually, because it can lead to errors and unexpected behaviour.
