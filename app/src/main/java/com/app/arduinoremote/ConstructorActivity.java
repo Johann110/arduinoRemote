@@ -182,7 +182,7 @@ public class ConstructorActivity extends AppCompatActivity {
         remotePanel.removeAllViews();
 
         LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 30);
-        Drawable remoteButtonShape = ResourcesCompat.getDrawable(getResources(), R.drawable.shape_remote_buttons, getTheme());
+        Drawable remoteButtonShape = ResourcesCompat.getDrawable(getResources(), R.drawable.shape_constructor_remote_buttons, getTheme());
 
         File[] files = folder.listFiles();
         for(int i = 0; i < files.length; i++){

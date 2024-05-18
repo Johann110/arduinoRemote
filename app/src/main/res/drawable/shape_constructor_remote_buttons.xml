@@ -5,7 +5,7 @@
     android:padding="10dp">
     <corners android:radius="10dp"/>
     <gradient
-        android:startColor="@color/darkgreen"
-        android:endColor="@color/lightgreen"
+        android:startColor="@color/lightred"
+        android:endColor="@color/darkred"
         android:angle="90"/>
 </shape>

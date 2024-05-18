@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/drawable/shape_constructor_remote_buttons.xml" value="0.228" />
         <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/drawable/shape_remote_buttons.xml" value="0.1735" />
         <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/activity_info.xml" value="0.1" />
         <entry key="..\:/Users/shili/AndroidStudioProjects/arduinoRemote/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
