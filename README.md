@@ -418,6 +418,9 @@ Make sure you added the BT device to the BT devicelist in your phone.
 If the app still not connecting and throwing the error "Not able to connect. Cause may be the remote name", check if the name in your controller, set
 in SerialBT.begin(); matches with the given device name in the remote. The names are case sensitive, which means that it is important wheter the letters are uppercase or lowercase.
 To check the name in the app open the remote in the constructor and click the settings button.
+<br><br>
+If the name matches in the app and the in controller, but there is still no connection, try to delete the controller from the Bluetooth device list in your phone and add it again.
+
 
 <b>Can't connect to the controller via Wi-Fi:</b><br>
 Make sure you connected your phone to the hotspot of the controller. If so, check wheter the ip given in the remote matches with the ip showing in the port monitor of the controller.
