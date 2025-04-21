@@ -432,7 +432,7 @@ settings button.
 If the app is showing that you are connected, but the controller is not receiving anything, you probably connected to the wrong Wi-Fi.
 If you are at home your phone probably switched to the home Wi-Fi.
 
-<b>The app is not showing any text sent by the controller:</b><br>
+<b>The app is not showing any text sent by the controller via Bluetooth:</b><br>
 Make sure you added the asterisk "*" at the end of the message.
 
 <b>The controller did not recognized the code from the switch/button:</b><br>
