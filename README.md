@@ -103,8 +103,9 @@ if (data == "code of the desired button"){
 }
 client.print(sendValue);
 ```
-<b>Important:</b><br>
-This code needs to be inside if(client){}<br><br>
+> [!IMPORTANT]
+>  This code needs to be inside if(client){}
+<br>
 <b>Usage example:</b><br>
 Create a remote and add controls in the following order:<br>
 1. Switch<br>
@@ -276,7 +277,9 @@ if (potentiometerParts[0] != "") {
   Serial.println("value: " + String(potentiometerValue));
 }
 ```
-<b>The text field</b> is used to receive information from the arduino. To make the text field work, we call the bluetoothPrintLine() function. Write a string you want to send in the brackets. <b>IMPORTANT:</b> there must be an asterisk "*" at the end of the string, this is a stop character so that the application detects the end of the message.<br>
+<b>The text field</b> is used to receive information from the arduino. To make the text field work, we call the bluetoothPrintLine() function. Write a string you want to send in the brackets.<br>
+> [!IMPORTANT]  
+> there must be an asterisk "*" at the end of the string, this is a stop character so that the application detects the end of the message.
 Example:<br>
 ```cpp
 // in loop function
