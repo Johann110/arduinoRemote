@@ -280,7 +280,9 @@ if (potentiometerParts[0] != "") {
 <b>The text field</b> is used to receive information from the arduino. To make the text field work, we call the bluetoothPrintLine() function. Write a string you want to send in the brackets.<br>
 > [!IMPORTANT]  
 > there must be an asterisk "*" at the end of the string, this is a stop character so that the application detects the end of the message.
-Example:<br>
+<br>
+
+Example:
 ```cpp
 // in loop function
 if (data == "b0x1") {
