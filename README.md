@@ -438,5 +438,10 @@ Make sure you added the asterisk "*" at the end of the message.
 <b>The controller did not recognized the code from the switch/button:</b><br>
 Your controller is probably busy with other stuff, because of that it receives multiple incoming codes and concatenates them together.
 To be sure the controller reacts even if the codes are stacked up, you can just check if the incoming data <b>contains</b>
-the desired code instead of checking whether the code <b>is equal to</b> the incoming data.
-
+the desired code instead of checking whether the code <b>is equal to</b> the incoming data.<br>
+Like so:
+```cpp
+if (data.indexOf("myCode") != -1) {
+  // do stuff
+}
+```
