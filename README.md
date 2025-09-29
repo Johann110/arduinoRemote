@@ -406,7 +406,7 @@ if (millis() - tmr1 >= 500) { // 500 milliseconds
 ```
 
 You can add line breaks for your textfield text by adding "#br#" to the send string.<br>
-In case there are more text than the textfield can show, you can scroll down to see the rest.<br>
+In case there is more text than the textfield can show, you can scroll down to see the rest.<br>
 
 If you just want to install the app, I added a APK file "arduinoRemote.apk" for the installation.
 
